@@ -24,8 +24,12 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+					<section id="markdown" data-markdown=""
+					data-separator="^\n\n\n"
+					data-separator-vertical="^\n\n"
+					data-separator-notes="^Note:"
+					data-charset="utf-8">
+					</section>
 			</div>
 		</div>
 
@@ -33,6 +37,15 @@
 		<script src="js/reveal.js"></script>
 
 		<script>
+		    // get URL parameter
+			var arg = new Object;
+			var pair=location.search.substring(1).split('&');
+			for (var i=0; pair[i]; i++) {
+				var kv = pair[i].split('=');
+				arg[kv[0]]=kv[1];
+			};
+			var m = arg.m ? arg.m : 'default.md'
+			document.getElementById('markdown').setAttribute('data-markdown', m);
 			// More info about config & dependencies:
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
