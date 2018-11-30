@@ -7,7 +7,7 @@
 		<title>reveal.js</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/league.css">
+		<link id="theme" rel="stylesheet" href="css/theme/black.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -45,7 +45,9 @@
 				arg[kv[0]]=kv[1];
 			};
 			var m = arg.m ? arg.m : 'default.md'
+			var t = arg.t ? arg.t : 'black'
 			document.getElementById('markdown').setAttribute('data-markdown', m);
+			document.getElementById('theme').setAttribute('href', 'css/theme/' + t + '.css');
 			// More info about config & dependencies:
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
