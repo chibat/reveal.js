@@ -24,7 +24,7 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-					<section id="markdown" data-markdown=""
+					<section class="markdown" data-markdown=""
 					data-separator="^\n\n\n"
 					data-separator-vertical="^\n\n"
 					data-separator-notes="^Note:"
@@ -46,12 +46,13 @@
 			};
 			var m = arg.m ? arg.m : 'default.md'
 			var t = arg.t ? arg.t : 'black'
-			document.getElementById('markdown').setAttribute('data-markdown', m);
+			document.getElementsByClassName('markdown')[0].setAttribute('data-markdown', m);
 			document.getElementById('theme').setAttribute('href', 'css/theme/' + t + '.css');
 			// More info about config & dependencies:
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				history: true,
 				transition: Reveal.getQueryHash().transition || 'default',
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
